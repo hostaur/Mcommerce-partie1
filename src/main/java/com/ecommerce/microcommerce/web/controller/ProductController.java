@@ -64,7 +64,7 @@ public class ProductController {
     @ApiOperation(value = "Récupère la liste des produits avec leur marge")
 	@GetMapping(value = "/trierProduitsParOrdreAlphabetique")
 	public List<Product> trierProduitsParOrdreAlphabetique() {
-		List<Product> produits = productDao.findByOrderByNomDesc();
+		List<Product> produits = productDao.findByOrderByNomAsc();
 		return produits;
 	}
     
