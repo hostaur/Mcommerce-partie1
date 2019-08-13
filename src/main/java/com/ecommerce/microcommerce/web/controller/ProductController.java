@@ -60,8 +60,15 @@ public class ProductController {
 
 		return map;
 	}
+    
+    @ApiOperation(value = "Récupère la liste des produits avec leur marge")
+	@GetMapping(value = "/trierProduitsParOrdreAlphabetique")
+	public List<Product> trierProduitsParOrdreAlphabetique() {
+		List<Product> produits = productDao.findByOrderByNomDesc();
+		return produits;
+	}
+    
     //Récupérer la liste des produits
-
     @RequestMapping(value = "/Produits", method = RequestMethod.GET)
 
     public MappingJacksonValue listeProduits() {
